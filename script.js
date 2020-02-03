@@ -134,11 +134,11 @@ if(!period) {
     }
 }
 
-load_page("https://reddit.com/r/"+vars["s"]+(vars["order"] ? "/"+vars["order"] : "")+".json"+(vars["period"] ? "?sort="+vars["order"]+"&t="+vars["period"] : ""))
+load_page("https://old.reddit.com/r/"+vars["s"]+(vars["order"] ? "/"+vars["order"] : "")+".json"+(vars["period"] ? "?sort="+vars["order"]+"&t="+vars["period"] : ""))
 
 document.body.onscroll = function() {
     if (document.body.scrollTop + document.body.clientHeight > document.body.offsetHeight-document.body.clientHeight) {
-        load_page("https://reddit.com/r/"+vars["s"]+(vars["order"] ? "/"+vars["order"] : "")+".json?count=25&after="+page_after+(vars["period"] ? "&sort="+vars["order"]+"&t="+vars["period"] : ""))
+        load_page("https://old.reddit.com/r/"+vars["s"]+(vars["order"] ? "/"+vars["order"] : "")+".json?count=25&after="+page_after+(vars["period"] ? "&sort="+vars["order"]+"&t="+vars["period"] : ""))
     }
 };
 
