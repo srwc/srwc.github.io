@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    margin: 0px;
+    background-color: black;
+}
+#page {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#topnav {
+    align-self: center;
+    background: rgba(60, 60, 60, 0.8);
+    margin: 5px;
+    width: 100%;
+    max-width: 800px;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    overflow: auto;
+}
+#topnav a {
+    padding: 10px 15px;
+}
+#topnav a:hover {
+    background: #FFFFFF;
+    color: black;
+    cursor: pointer;
+}
+#period_context {
+    color: white;
+    margin-top: 15px;
+    margin-left: -20px;
+    position: absolute;
+    display: flex;
+    z-index: 200;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: rgba(60, 60, 60, 0.8);
+    
+}
+.space {
+    flex-grow: 1;
+}
+.post {
+    align-self: center;
+    background: rgba(60, 60, 60, 0.8);
+    margin: 5px;
+    width: 100%;
+    max-width: 800px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.post.nsfw {
+    background: rgba(60, 0, 0, 0.8);
+}
+.post.stickied {
+    background: rgba(0, 60, 0, 0.8);
+}
+.post.spoiler {
+    background: rgba(0, 30, 0, 0.8);
+}
+.post .header {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+.post .header a {
+    margin: 5px;
+}
+.post .header .title {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 14px;
+    text-align: justify;
+}
+.post .header .points {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+.post .header .thumb{
+    min-width: 60px;
+    min-height: 60px;
+    background-color: rgba(120, 120, 120, 0.8);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+.post .header .thumb:hover {
+    cursor: pointer;
+}
+.post .header .thumb i {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 30px;
+}
+.post .header .thumb img{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+.post .content {
+    margin: 5px;
+    text-align: justify;
+}
+.post .content .text {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    left: -10px;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+}
+.post .content .center {
+    text-align: center;
+}
+.post .content video {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: auto;
+    max-height: 95vh;
+    border-radius: 5px;
+
+}
+.post .content img {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 95%;
+    height: auto;
+    border-radius: 5px;
+}
+.post .footer {
+    margin: 5px;
+    display: flex;
+}
+.post .footer a {
+    font-size: 14px;
+    margin: 5px
+}
+.material-icons.md-18 { 
+    font-size: 18px; 
+}
+a i {
+    vertical-align: middle;
+    font-size: 10px;
+}

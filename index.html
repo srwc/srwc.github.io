@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Simple Reddit Scroller</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet"/>
+        <script>
+            function set_order(order) {
+                if(order.length > 0)
+                    if(order == "top" || order == "controversial")
+                        window.location.href = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, "")+"?s="+vars["s"]+"&order="+order+"&period=day"
+                    else
+                        window.location.href = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, "")+"?s="+vars["s"]+"&order="+order
+                else
+                    window.location.href = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, "")+"?s="+vars["s"]
+            }
+            function set_period(period) {
+                window.location.href = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, "")+"?s="+vars["s"]+"&order="+vars["order"]+"&period="+period
+            }
+        </script>
+    </head>
+    <body>
+        <script src="//cdn.dashjs.org/latest/dash.all.min.js"></script>
+        <div id="page">
+            <div id="topnav">
+                <a onclick="set_order('')"><i class='material-icons md-18'>whatshot</i> Hot</a>
+                <a onclick="set_order('new')"><i class='material-icons md-18'>new_releases</i> New</a>
+                <a onclick="set_order('top')"><i class='material-icons md-18'>arrow_upward</i> Top</a>
+                <a onclick="set_order('rising')"><i class='material-icons md-18'>trending_up</i> Rising</a>
+                <a onclick="set_order('controversial')"><i class='material-icons md-18'>flash_on</i> Controversial</a>
+                <div class="space"></div>
+            </div>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+    <script src="script.js"></script>
+    <script async src='//s.imgur.com/min/embed.js' charset='utf-8'></script>
+</html>
