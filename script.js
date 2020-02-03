@@ -44,8 +44,10 @@ function load_page(link) {
                 //Create post
                 let new_div = document.createElement("div")
                 new_div.className = "post"
+                //Post Left
+                new_div.innerHTML = "<div class='left'><a class='points'>"+score+"</br>Points</a></div>"                
                 //Post Header
-                new_div.innerHTML = "<div class='header'><a class='thumb' id='thumb-"+post_id+"'>"+(thumb.includes(".") ? "<img src="+thumb+">" : "<i class='material-icons md-18'>chat_bubble</i>")+"</a><a class='points'>"+score+"</br>Points</a><a class='title'>"+title+"</a></div>"
+                let post_right = "<div class='header'></a><a class='thumb' id='thumb-"+post_id+"'>"+(thumb.includes(".") ? "<img src="+thumb+">" : "<i class='material-icons md-18'>chat_bubble</i>")+"<a class='title'>"+title+"</a></div>"
                 //Post Content
                 let content = (image ? "<div class='center'><img src="+image+"></div>" : "")
                 if(url.endsWith(".png") || url.endsWith(".jpg") || url.endsWith(".jpeg")) {
@@ -55,15 +57,17 @@ function load_page(link) {
                 }else if(url.match("gfycat.com")) {
                     content = "<div style='position:relative; margin: 5px; padding-bottom:calc(70.80% + 44px)'><iframe src='https://gfycat.com/ifr/"+url.split("/")[url.split("/").length-1].split(".")[0].split("-")[0]+"' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>"
                 }else if(url.match("youtube.com")) {
-                    content = "<div class='center'><iframe id='ytplayer' style='width: 100%; height:441; max-width: 784' type='text/html' src='http://www.youtube.com/embed/"+(url.split("v=")[1].indexOf('&') != -1 ? url.split("v=")[1].substring(0, url.split("v=")[1].indexOf("&")) : url.split("v=")[1])+"' frameborder='0'/></div>"
+                    content = "<div class='center'><iframe id='ytplayer' style='width: 100%; height:441; max-width: 784' type='text/html' src='https://www.youtube.com/embed/"+(url.split("v=")[1].indexOf('&') != -1 ? url.split("v=")[1].substring(0, url.split("v=")[1].indexOf("&")) : url.split("v=")[1])+"' frameborder='0'/></div>"
                 }else if(vreddit) {
                     new_video = vreddit
                     content = "<div class='center'><video id='video-"+post_id+"' controls></video></div>"
                 }
                 var markdown_converter = new showdown.Converter()
-                new_div.innerHTML += "<div class='content' id='content-"+post_id+"'></div>"
+                post_right += "<div class='content' id='content-"+post_id+"'></div>"
                 //Post Footer
-                new_div.innerHTML += "<div class='footer'><a>Posted by /u/"+author+" at /r/"+subreddit+"</a><div class='space'></div><a><i class='material-icons md-18'>chat_bubble</i> "+comments+" Comments</a></div>"
+                post_right += "<div class='footer'><a class='authors'>Posted by /u/"+author+" at /r/"+subreddit+"</a><div class='space'></div><a class='comments'><i class='material-icons md-18'>chat_bubble</i> "+comments+"</a></div></div>"
+                //Post Right
+                new_div.innerHTML += "<div class='right'>"+post_right+"</div>"
                 //Post properties
                 if(stickied) new_div.classList.add("stickied")
                 if(nsfw) new_div.classList.add("nsfw")

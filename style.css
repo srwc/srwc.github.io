@@ -5,26 +5,36 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: white;
     margin: 0px;
-    background-color: black;
+    background-color: #1E1E1E;
 }
 #page {
-    padding: 5px;
     display: flex;
     flex-direction: column;
 }
+#topnav-excess {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    background-color: #000000;
+    height: 39.75px;
+}
 #topnav {
     align-self: center;
-    background: rgba(60, 60, 60, 0.8);
-    margin: 5px;
-    width: 100%;
+    background: #000000;
+    box-shadow: white;
+    margin-bottom: 2px;
     max-width: 800px;
-    padding: 5px;
-    border-radius: 5px;
+    width: 100%;
     display: flex;
     overflow: auto;
+    text-align: center;
 }
 #topnav a {
-    padding: 10px 15px;
+    font-size: 12px;
+    padding: 10px 5px;
+    
 }
 #topnav a:hover {
     background: #FFFFFF;
@@ -33,27 +43,24 @@ body {
 }
 #period_context {
     color: white;
-    margin-top: 15px;
+    margin-top: 12px;
     margin-left: -20px;
     position: absolute;
     display: flex;
     z-index: 200;
-    flex-direction: column;
-    border-radius: 5px;
+    flex-direction: column;  
     background-color: rgba(60, 60, 60, 0.8);
-    
 }
 .space {
     flex-grow: 1;
 }
 .post {
     align-self: center;
-    background: rgba(60, 60, 60, 0.8);
-    margin: 5px;
+    background: #252525;
+    margin: 2px;
     width: 100%;
     max-width: 800px;
-    padding: 5px;
-    border-radius: 5px;
+    display: flex
 }
 .post.nsfw {
     background: rgba(60, 0, 0, 0.8);
@@ -64,26 +71,50 @@ body {
 .post.spoiler {
     background: rgba(0, 30, 0, 0.8);
 }
-.post .header {
+.post .left {
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+}
+.post .left .points {
+    margin-top: 2px;
+    text-align: center;
+    font-size: 13px;
+}
+.post .right {
+    width: 100%;
+}
+.post .right .header {
     display: flex;
     flex-direction: row;
-    margin: 5px;
+    margin: 2px;
 }
-.post .header a {
-    margin: 5px;
+.post .right .header a {
+    margin: 2px;
 }
-.post .header .title {
+.post .right .header .title {
     margin-top: auto;
     margin-bottom: auto;
+    margin-left: 2px;
+    margin-right: 2px;
     font-size: 14px;
     text-align: justify;
+    max-height: 60px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
 }
-.post .header .points {
+.post .right .header {
+    font-size: 10px;
     margin-top: auto;
     margin-bottom: auto;
+    margin-left: 2px;
+    margin-right: 2px;
     text-align: center;
 }
-.post .header .thumb{
+.post .right .header .thumb{
     min-width: 60px;
     min-height: 60px;
     background-color: rgba(120, 120, 120, 0.8);
@@ -91,24 +122,24 @@ body {
     display: flex;
     justify-content: center;
 }
-.post .header .thumb:hover {
+.post .right .header .thumb:hover {
     cursor: pointer;
 }
-.post .header .thumb i {
+.post .right .header .thumb i {
     margin-top: auto;
     margin-bottom: auto;
     font-size: 30px;
 }
-.post .header .thumb img{
+.post .right .header .thumb img{
     width: 60px;
     height: 60px;
     border-radius: 5px;
 }
-.post .content {
-    margin: 5px;
+.post .right .content {
+    margin: 2px;
     text-align: justify;
 }
-.post .content .text {
+.post .right .content .text {
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
     left: -10px;
@@ -116,32 +147,41 @@ body {
     width: 100%;
     font-size: 14px;
 }
-.post .content .center {
+.post .right .content .center {
     text-align: center;
 }
-.post .content video {
-    margin-top: 5px;
-    margin-bottom: 5px;
+.post .right .content video {
+    margin-top: 2px;
+    margin-bottom: 2px;
     width: 100%;
     height: auto;
     max-height: 95vh;
-    border-radius: 5px;
-
 }
-.post .content img {
-    margin-top: 5px;
-    margin-bottom: 5px;
+.post .right .content img {
+    margin-top: 2px;
+    margin-bottom: 2px;
     width: 95%;
     height: auto;
-    border-radius: 5px;
 }
-.post .footer {
-    margin: 5px;
+.post .right .footer {
+    margin: 2px;
     display: flex;
+    text-align: left;
 }
-.post .footer a {
+.post .right .footer .authors {
+    font-size: 10px;
+    margin: 2px;
+}
+.post .right .footer .comments {
     font-size: 14px;
-    margin: 5px
+    margin: 2px;
+    min-width: 60px;
+    text-align: right;
+}
+.post .right .footer .comments:hover {
+    background: #FFFFFF;
+    color: black;
+    cursor: pointer;
 }
 .material-icons.md-18 { 
     font-size: 18px; 
